@@ -1,5 +1,3 @@
-FROM registry.access.redhat.com/ubi7/ubi:7.7
-RUN yum install -y httpd && yum clean all
-RUN echo "Helllo from Docker " > /var/www/html/index.html
-EXPOSE 80
-CMD ["httpd", "-D", "FOREGROUND"]
+FROM registry.access.redhat.com/ubi8/ubi:8.0
+USER root
+CMD bash -c "while true; do echo test; sleep 5; done"
