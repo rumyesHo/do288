@@ -11,7 +11,7 @@ RUN yum install -y --nodocs --disableplugin=subscription-manager httpd && \
 
 ONBUILD COPY src/ ${DOCROOT}/
 
-EXPOSE 80
+EXPOSE 8080
 
 RUN rm -rf /run/httpd && mkdir /run/httpd
 
