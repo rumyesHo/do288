@@ -5,8 +5,8 @@ ENV DOCROOT=/var/www/html
 
 
 RUN yum install -y --nodocs --disableplugin=subscription-manager httpd && \
-    yum clean all --disableplugin=subscription-manager -y 
-#    echo "Hello from Container" > ${DOCROOT}/index.html
+    yum clean all --disableplugin=subscription-manager -y && \
+    echo "Hello from Container" > ${DOCROOT}/index.html
 
 
 ONBUILD COPY src/ ${DOCROOT}/
